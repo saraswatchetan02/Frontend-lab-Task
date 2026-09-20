@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Web Design</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .main {
+            display: flex;
+        }
+
+
+        .sidebar {
+            width: 120px;
+            min-height: 640px;
+            background-color: #444;
+            color: white;
+            padding: 20px 15px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .product-section {
+            min-height: 230px;
+        }
+
+        .product-card {
+            width: 170px;
+
+            /* CSS BOX MODEL */
+            margin: 10px auto;
+            padding: 15px;
+            border: 1px solid #333;
+
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            margin: 8px 0;
+        }
+
+        .product-card p {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 16px !important;
+            font-weight: bold;
+        }
+
+        .product-card button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            cursor: pointer;
+        }
+
+
+        .blog-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .blog-card {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 12px;
+            border-radius: 4px;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card a {
+            color: blue;
+            font-size: 12px;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin-right: 15px;
+            }
+
+            .blog-container {
+                flex-direction: column;
+            }
+
+            .product-card {
+                width: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Responsive Web Design</h1>
+        <p>Sidebar, Product Card and Blog Layout</p>
+    </header>
+
+
+
+    <div class="main">
+
+
+        <aside class="sidebar">
+
+            <h2>Sidebar</h2>
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+
+        </aside>
+
+
+
+        <main class="content">
+
+
+            <section class="section">
+
+                <h2>Welcome</h2>
+
+                <br>
+
+                <p>
+                    This page demonstrates different responsive
+                    web layouts using CSS.
+                </p>
+
+            </section>
+
+
+            <section class="section product-section">
+
+                <h2>Product Card</h2>
+
+                <div class="product-card">
+
+                    <img src="https://via.placeholder.com/150"
+                         alt="Laptop">
+
+                    <h3>HP Laptop</h3>
+
+                    <p>
+                        A powerful laptop suitable for
+                        students, programming and everyday work.
+                    </p>
+
+                    <p class="price">₹55,000</p>
+
+                    <button>Buy Now</button>
+
+                </div>
+
+            </section>
+
+
+            <!-- BLOG -->
+
+            <section class="section">
+
+                <h2>Latest Blog Posts</h2>
+
+                <div class="blog-container">
+
+                    <div class="blog-card">
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Learn the basics of HTML, CSS and
+                            JavaScript to create modern websites.
+                        </p>
+
+                        <a href="#">Read More</a>
+
+                    </div>
+
+
+                    <div class="blog-card">
+
+                        <h3>CSS Flexbox</h3>
+
+                        <p>
+                            Flexbox helps us create flexible
+                            and responsive layouts.
+                        </p>
+
+                        <a href="#">Read More</a>
+
+                    </div>
+
+
+                    <div class="blog-card">
+
+                        <h3>Responsive Design</h3>
+
+                        <p>
+                            Responsive design allows websites
+                            to work on different screen sizes.
+                        </p>
+
+                        <a href="#">Read More</a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="section">
+
+                <h2>Contact</h2>
+
+                <br>
+
+                <p>Email: saraswatchetan90@gmail.com</p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        © 2026 Responsive Web Design
+    </footer>
+
+</body>
+
+</html>
