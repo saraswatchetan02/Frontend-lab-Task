@@ -1,0 +1,474 @@
+/* General */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Navigation Bar */
+
+.custom-navbar {
+    background-color: #020617;
+    padding: 18px 0;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #00ffff !important;
+}
+
+
+/* Hero Section */
+
+.hero {
+    min-height: 650px;
+    background-color: #050b24;
+    color: white;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Hero Layout */
+
+.hero-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+
+.explore-btn {
+    background-color: #00aaff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #0088cc;
+    transform: scale(1.08);
+}
+
+
+/* Space Area */
+
+.space {
+    height: 450px;
+    position: relative;
+
+    border: 2px solid #263b70;
+    border-radius: 30px;
+
+    background-color: #080f2d;
+
+    overflow: hidden;
+}
+
+
+/* Planet */
+
+.planet {
+    position: absolute;
+
+    font-size: 130px;
+
+    left: 35%;
+    top: 35%;
+
+    animation: planetFloat 4s ease-in-out infinite;
+}
+
+
+/* Rocket */
+
+.rocket {
+    position: absolute;
+
+    font-size: 65px;
+
+    right: 15%;
+    top: 15%;
+
+    animation: rocketMove 4s ease-in-out infinite;
+}
+
+
+/* Astronaut */
+
+.astronaut {
+    position: absolute;
+
+    font-size: 55px;
+
+    left: 10%;
+    bottom: 15%;
+
+    animation: astronautMove 3s ease-in-out infinite;
+}
+
+
+/* Stars */
+
+.star {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+}
+
+.star-one {
+    top: 20%;
+    left: 15%;
+}
+
+.star-two {
+    bottom: 25%;
+    right: 20%;
+}
+
+
+/* Planet Animation */
+
+@keyframes planetFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Rocket Animation */
+
+@keyframes rocketMove {
+
+    0% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+
+    50% {
+        transform: translate(-50px, 80px) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+
+}
+
+
+/* Astronaut Animation */
+
+@keyframes astronautMove {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-35px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* About Section */
+
+.about-section {
+    background-color: #eef3f8;
+    padding: 80px 0;
+}
+
+
+.about-box {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.about-title {
+    background-color: #07152e;
+    color: white;
+
+    padding: 45px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.about-title h2 {
+    margin: 0;
+}
+
+
+.about-text {
+    padding: 45px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* Missions */
+
+.missions {
+    padding: 80px 0;
+    background-color: white;
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+/* Mission Grid */
+
+.mission-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* Mission Card */
+
+.mission-card {
+    padding: 35px;
+
+    text-align: center;
+
+    background-color: #f5f7fa;
+
+    border-radius: 20px;
+
+    border-top: 5px solid #07152e;
+
+    transition: 0.3s;
+}
+
+
+.mission-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.mission-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+
+.mission-card h3 {
+    margin-bottom: 15px;
+}
+
+
+.mission-card p {
+    line-height: 1.6;
+}
+
+
+/* Contact */
+
+.contact {
+    background-color: #07152e;
+    color: white;
+
+    padding: 80px 0;
+}
+
+
+.contact-box {
+    text-align: center;
+}
+
+
+.contact-box h2 {
+    font-size: 40px;
+}
+
+
+.contact-box p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+
+.contact-btn {
+    background-color: #00aaff;
+    color: white;
+
+    padding: 12px 30px;
+
+    border-radius: 25px;
+}
+
+
+.contact-btn:hover {
+    background-color: #0088cc;
+    color: white;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #020617;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+footer p {
+    margin: 0;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+
+    /* Hero */
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-box {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+
+    /* Space */
+
+    .space {
+        height: 350px;
+    }
+
+    .planet {
+        font-size: 90px;
+    }
+
+    .rocket {
+        font-size: 50px;
+    }
+
+    .astronaut {
+        font-size: 45px;
+    }
+
+
+    /* About */
+
+    .about-box {
+        grid-template-columns: 1fr;
+    }
+
+    .about-title,
+    .about-text {
+        padding: 30px;
+    }
+
+
+    /* Missions */
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
+
+}
