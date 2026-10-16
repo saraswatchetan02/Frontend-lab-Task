@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Checker</title>
+</head>
+<body>
+    <h2>Eligibility Checker</h2>
+    <script>
+        let age =prompt("Enter your age:");
+       age= Number(age);
+       if(age >0 && Number.isInteger(age) && Number.isFinite(age)){
+           let age1=age>=18?
+      "you are eligible to vote":
+      "you are not eligible to vote";
+    
+alert(age1);
+    document.write("<h3>Age: " + age + "</h3>");
+    document.write("<h3>" + age1 + "</h3>");
+}
+else{
+    alert("Please enter a valid age.");
+    document.write("<h3>Please enter a valid age.</h3>");
+
+
+}
+    </script>
+</body>
+</html>
