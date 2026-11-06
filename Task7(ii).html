@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .gallery {
+            background: white;
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #mainImage {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .thumbnails img {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 3px solid transparent;
+            border-radius: 5px;
+        }
+
+        .thumbnails img:hover {
+            border-color: blue;
+        }
+
+        .thumbnails img.active {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+
+        <h2>My Image Gallery</h2>
+
+       
+        <img id="mainImage"
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900">
+
+       
+        <div class="thumbnails">
+
+            <img class="active"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300">
+
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=300">
+
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=300">
+
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=300">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        
+        let mainImage = document.getElementById("mainImage");
+
+        // Select all thumbnail images
+        let thumbnails = document.querySelectorAll(".thumbnails img");
+
+        // Apply event listener to each thumbnail
+        thumbnails.forEach(function(img) {
+
+            img.addEventListener("click", function() {
+
+                // Change main image
+                mainImage.src = this.src.replace("w=300", "w=900");
+
+                
+                thumbnails.forEach(function(image) {
+                    image.classList.remove("active");
+                });
+
+               
+                this.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
