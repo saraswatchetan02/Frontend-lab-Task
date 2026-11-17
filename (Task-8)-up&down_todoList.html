@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic To-Do List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 60%;
+        }
+        input[type="checkbox"] {
+            width: auto;
+             padding: 0;
+}
+
+        button {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        li {
+            list-style: none;
+            background: #eeeeee;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>My To-Do List</h2>
+
+        <input type="text" id="taskInput"
+               placeholder="Enter your task">
+
+        <button id="addBtn">Add Task</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        let input = document.getElementById("taskInput");
+        let addBtn = document.getElementById("addBtn");
+        let taskList = document.getElementById("taskList");
+
+        // Function to add task
+        function addTask() {
+
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            // Create li element
+            let li = document.createElement("li");
+
+            //checkbox
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            // Add task text
+            let span = document.createElement("span");
+            span.innerText = task;
+
+            //mark task as completed
+            checkbox.addEventListener("change", function() {
+                if (checkbox.checked) {
+                    span.style.textDecoration = "line-through";
+                } else {
+                    span.style.textDecoration = "none";
+                }
+            });
+            // Create delete button
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+            deleteBtn.classList.add("delete");
+
+            // Remove task dynamically
+            deleteBtn.addEventListener("click", function() {
+                li.remove();
+            });
+
+            //create up button
+            let upBtn = document.createElement("button");
+            upBtn.innerText = "⬆️";
+            upBtn.classList.add("arrow");
+            upBtn.addEventListener("click", function() {
+                let prevLi = li.previousElementSibling;
+                if (prevLi!==null) {
+                    taskList.insertBefore(li, prevLi);
+                }
+            });
+            let downBtn = document.createElement("button");
+            downBtn.innerText = "⬇️";
+            downBtn.classList.add("arrow");
+            downBtn.addEventListener("click", function() {
+                let nextLi = li.nextElementSibling;
+                if (nextLi!==null) {
+                    taskList.insertBefore(nextLi, li);
+                }
+            });
+            // Append elements
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(upBtn);
+            li.appendChild(downBtn);
+            li.appendChild(deleteBtn);
+
+            taskList.appendChild(li);
+
+            // Clear input
+            input.value = "";
+        }
+
+        // Add button event
+        addBtn.addEventListener("click", addTask);
+
+    </script>
+
+</body>
+</html>
