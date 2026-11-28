@@ -1,30 +1,28 @@
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import ProductCard from './ProductCard';
-import './App.css';
+import Home from "./Home";
+import About from "./About";
+import Blog from "./Blog";
+
+import "./App.css";
+
 function App() {
   return (
-    <div>
-      <h1>Our Products</h1>
+    <BrowserRouter>
 
-      <ProductCard
-        image="https://placehold.co/200x150?text=Laptop"
-        title="Laptop"
-        description="A powerful laptop for students."
-      />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/blog">Blog</Link>
+      </nav>
 
-      <ProductCard
-        image="https://placehold.co/200x150?text=Mobile"
-        title="Mobile"
-        description="A smartphone with great features."
-      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
 
-      <ProductCard
-        image="https://placehold.co/200x150?text=Headphones"
-        title="Headphones"
-        description="High quality wireless headphones."
-      />
-
-    </div>
+    </BrowserRouter>
   );
 }
 
